@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour {
     private int jumpCount;
     public int lives;
     private string floortag = "Floor";
+    public int jumpLimit;
 
 	// This counts as a function without params
 	void Start () {
         playerBody = gameObject.GetComponent<Rigidbody2D>();
+        jumpLimit = 2;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCount < 2)
+            if (jumpCount < jumpLimit)
             {
                 playerBody.velocity = new Vector3(playerBody.velocity.x, jumpHeight, 0);
                 jumpCount++;
