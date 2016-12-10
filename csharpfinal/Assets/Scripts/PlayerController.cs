@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public int lives;
     private string floortag = "Floor";
     public int jumpLimit;
+    public float buffTime = 10.0f;
 
 	// This counts as a function without params
 	void Start () {
@@ -19,6 +20,17 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         death();
+        if(jumpLimit> 2)
+        {
+            buffTime = buffTime - Time.deltaTime;
+            if (buffTime < 0)
+            {
+                jumpLimit = 2;
+                buffTime = 10.0f;
+            }
+        }
+        
+
     }
     void PlayerControls()
     {

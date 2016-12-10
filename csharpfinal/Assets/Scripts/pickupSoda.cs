@@ -25,23 +25,16 @@ public class pickupSoda : MonoBehaviour {
                     Destroy(gameObject);
                     break;
                 case 2:
-                    JumpBuff ();
+                    playerController.lives = 1;
                     Destroy(gameObject);
+                    break;
+                case 3:
+                    playerController.lives = 50;
+                    Destroy(gameObject);
+                    playerController.jumpLimit = 10;
                     break;
             }
         }
     }
-    void JumpBuff ()
-    {
-        float buffTime = 10.0f;
-        while (buffTime > 0)
-        {
-            playerController.jumpLimit = 10;
-            buffTime = buffTime - Time.deltaTime;
-        }
-        if(buffTime < 0)
-        {
-            playerController.jumpLimit = 2;
-        }
-    }
+
 }
