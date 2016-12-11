@@ -51,6 +51,10 @@ public class PlayerController : MonoBehaviour {
 
             }
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("SwingTrigger");
+        }
        
     }
     private void OnCollisionEnter2D(Collision2D other)
