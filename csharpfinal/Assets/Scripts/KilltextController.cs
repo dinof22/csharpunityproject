@@ -15,7 +15,8 @@ public class KilltextController : MonoBehaviour {
 	
 	void Update () {
         killNumber = kills[i];
-        Killtext.text = "Kills " + killNumber.ToString();
+        //when enemy is killed, this shows numbers within the kills array
+        Killtext.text = "Kills: " + killNumber.ToString();
 
 	}
 }

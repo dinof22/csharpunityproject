@@ -18,6 +18,7 @@ public class LifeTextController : MonoBehaviour {
         lives = GetLife ();
         lifeText.text = "lives: " + lives.ToString();
 	}
+    //these functions have a return
      int GetLife ()
     {
         return playerController.lives;

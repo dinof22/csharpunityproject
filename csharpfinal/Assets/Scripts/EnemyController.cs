@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class EnemyController : MonoBehaviour {
+    //enemy life count numbers are stored within an array
     int[] enemyLife = new int[4] {0, 1, 2, 3 };
     public int life;
     private int lifePointer;

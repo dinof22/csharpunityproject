@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+    //lots of int vars
     public int speed;
     private Rigidbody2D playerBody;
     public int jumpHeight;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour {
         jumpLimit = 2;
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
         death();
         if(jumpLimit> 2)
