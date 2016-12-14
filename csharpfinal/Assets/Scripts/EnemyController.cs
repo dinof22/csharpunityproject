@@ -12,15 +12,18 @@ public class EnemyController : MonoBehaviour {
 
 	void Start () {
         lifePointer = 3;
-        
+        gamecontroller.GetComponent<EnemiesLeftController>().enemiesLeft.Add("Enemy1");
+        gamecontroller.GetComponent<EnemiesLeftController>().CheckEnemies();
 	}
 	
 	
 	void Update () {
         life = enemyLife[lifePointer];
-        if (lifePointer == 0)
+        if (life == 0)
         {
             gamecontroller.GetComponent<KilltextController>().i = gamecontroller.GetComponent<KilltextController>().i + 1;
+            gamecontroller.GetComponent<EnemiesLeftController>().enemiesLeft.RemoveAt(0);
+            gamecontroller.GetComponent<EnemiesLeftController>().CheckEnemies();
             Destroy(gameObject);
         }
         if(lifePointer < 0)
