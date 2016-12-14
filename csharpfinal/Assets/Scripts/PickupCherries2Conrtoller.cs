@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//essentially the same as the first cherries script
 public class PickupCherries2Conrtoller : MonoBehaviour {
     public GameObject playerObject;
     public PlayerController playerController;
@@ -18,9 +18,9 @@ public class PickupCherries2Conrtoller : MonoBehaviour {
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            playerController.items.Add("Cherries");
+            playerController.items.Add("Cherries"); //add items to list
             int buffChance = Random.Range(1, 3);
-            switch (buffChance)
+            switch (buffChance) //switch
             {
                 case 1:
                     playerController.lives = playerController.lives + 3;

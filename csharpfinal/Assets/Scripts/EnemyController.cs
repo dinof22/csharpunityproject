@@ -6,8 +6,8 @@ public class EnemyController : MonoBehaviour {
     int[] enemyLife = new int[4] {0, 1, 2, 3 };
     public int life;
     private int lifePointer;
-    public string playerTag = "Player";
-    public GameObject playerObject;
+    public string playerTag = "Player"; //string var
+    public GameObject playerObject; //object var
     public GameObject gamecontroller;
 
 	void Start () {
@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour {
         }
 
 	}
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other) //function with 2 params
     {
         if (other.gameObject.CompareTag(playerTag))
         {

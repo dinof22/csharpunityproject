@@ -35,30 +35,30 @@ public class PlayerController : MonoBehaviour {
                 buffTime = 10.0f;
             }
         }
-        if (items.Count == 1)
+        if (items.Count == 1) //if you picked up the first item, there will be one item in items list
         {
-            foreach (string item in items)
+            foreach (string item in items) // (foreach) loop through each item in list (only one :)
             {
-                item1Text.text = "Item 1: " + item;
+                item1Text.text = "Item 1: " + item; //display item text
             }
         }
-        if (items.Count == 2)
+        if (items.Count == 2) //if you picked up second item, there will be 2 items in items list
         {
-            for (int u = 0; u < items.Count; u++)
+            for (int u = 0; u < items.Count; u++) //for loop goes through items list
             {
-                if (u == 1)
+                if (u == 1) //runs logic once it hits the second item on the list (0 based)
                 {
-                    item2Text.text = "Item 2: " + items[u];
+                    item2Text.text = "Item 2: " + items[u]; //Display item in Item 2 slot on screen
                 }
             }
         }
-        if (items.Count == 3)
+        if (items.Count == 3) //iff you picked up third item, there will be 3 items in items list
         {
-            for (int u = 0; u < items.Count; u++)
+            for (int u = 0; u < items.Count; u++) //Loop goes through all 3 items in the list
             {
-                if (u == 2)
+                if (u == 2) //once loop hits 3rd item on list (0 based), runs logic
                 {
-                    item3Text.text = "Item 3: " + items[u];
+                    item3Text.text = "Item 3: " + items[u]; //display text for 3rd item slot
                 }
             }
         }

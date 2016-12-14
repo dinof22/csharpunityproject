@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LifeTextController : MonoBehaviour {
     public Text lifeText;
-    public GameObject player;
+    public GameObject player; //object var
     public PlayerController playerController;
     public int lives;
 
@@ -18,7 +18,7 @@ public class LifeTextController : MonoBehaviour {
         lives = GetLife ();
         lifeText.text = "lives: " + lives.ToString();
 	}
-    //these functions have a return
+    //these functions have a return (have returnz)
      int GetLife ()
     {
         return playerController.lives;

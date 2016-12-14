@@ -18,9 +18,9 @@ public class PickupCherriesController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            playerController.items.Add("Cherries");
+            playerController.items.Add("Cherries"); //add items to list
             int buffChance = Random.Range(1, 3);
-            switch (buffChance)
+            switch (buffChance) //switch statement
             {
                 case 1:
                     playerController.lives = playerController.lives + 3;
