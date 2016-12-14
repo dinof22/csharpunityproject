@@ -16,7 +16,7 @@ public class pickupSoda : MonoBehaviour {
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            Debug.Log("Player has touched this object");
+            playerController.items.Add ("Soda");
             int buffChance = Random.Range(1, 3);
             switch (buffChance)
             {
@@ -30,8 +30,8 @@ public class pickupSoda : MonoBehaviour {
                     break;
                 case 3:
                     playerController.lives = 50;
+                    playerController.jumpLimit = 1;
                     Destroy(gameObject);
-                    playerController.jumpLimit = 10;
                     break;
             }
         }

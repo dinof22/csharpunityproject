@@ -35,10 +35,26 @@ public class PlayerController : MonoBehaviour {
                 buffTime = 10.0f;
             }
         }
-        
+        if (items.Count == 1)
+        {
+            foreach (string item in items)
+            {
+                item1Text.text = "Item 1: " + item;
+            }
+        }
+        if (items.Count == 2)
+        {
+            for (int u = 0; u < items.Count; u++)
+            {
+                if (u == 1)
+                {
+                    item2Text.text = "Item 2: " + items[u];
+                }
+            }
+        }
 
     }
-    void PlayerControls()
+    void PlayerControls() //lots of functions without params
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -70,12 +86,20 @@ public class PlayerController : MonoBehaviour {
             jumpCount = 0;
         }
     }
-    void death()
+
+    void OncollsionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag(floortag)) //this function has (2) params to detect object collision
+        {
+            jumpCount = 0;
+        }
+    }
+    void death() //another function without params
     {
         if(lives == 0)
         {
             Destroy(gameObject);
-        } else
+        } else //else clause
         {
             PlayerControls();
         }

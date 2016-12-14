@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class ThornController : MonoBehaviour {
-    public GameObject player;
+    public GameObject player; //object var
     public PlayerController playerController;
-    private string playerTag = "Player";
+    private string playerTag = "Player"; //string var
 	
 	void Start () {
         playerController = player.GetComponent<PlayerController>();
@@ -14,7 +14,7 @@ public class ThornController : MonoBehaviour {
 	void Update () {
 	
 	}
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other) //method with 2 params
     {
         if (other.gameObject.CompareTag(playerTag))
         {
