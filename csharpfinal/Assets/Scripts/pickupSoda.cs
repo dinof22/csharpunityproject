@@ -5,6 +5,7 @@ public class pickupSoda : MonoBehaviour {
     public GameObject playerObject;
     public PlayerController playerController;
     public string playerTag = "Player";
+
 	void Start () {
         playerController = playerObject.GetComponent<PlayerController>();
  	}

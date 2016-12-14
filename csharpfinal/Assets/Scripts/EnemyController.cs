@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour {
 
 	void Start () {
         lifePointer = 3;
+        
 	}
 	
 	
