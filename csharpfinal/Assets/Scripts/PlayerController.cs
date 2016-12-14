@@ -52,6 +52,16 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
+        if (items.Count == 3)
+        {
+            for (int u = 0; u < items.Count; u++)
+            {
+                if (u == 2)
+                {
+                    item3Text.text = "Item 3: " + items[u];
+                }
+            }
+        }
 
     }
     void PlayerControls() //lots of functions without params
