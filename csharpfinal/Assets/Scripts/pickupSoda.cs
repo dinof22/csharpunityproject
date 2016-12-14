@@ -30,8 +30,7 @@ public class pickupSoda : MonoBehaviour {
                     Destroy(gameObject);
                     break;
                 case 3:
-                    playerController.lives = 50;
-                    playerController.jumpLimit = 1;
+                    playerController.jumpLimit = 10;
                     Destroy(gameObject);
                     break;
             }
