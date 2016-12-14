@@ -1,27 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-    //lots of int vars
-    public int speed;
+    public int speed; //int variables
     private Rigidbody2D playerBody;
     public int jumpHeight;
     private int jumpCount;
     public int lives;
-    private string floortag = "Floor";
+    private string floortag = "Floor"; //string var
     public int jumpLimit;
     public float buffTime = 10.0f;
+    public List<string> items = new List<string>(); //this list holds strings of item names as you pick them up
+    public Text item1Text; //object variables, controll hte text that displays what is being held in the item spot
+    public Text item2Text;
+    public Text item3Text;
+
 
 	// This counts as a function without params
 	void Start () {
         playerBody = gameObject.GetComponent<Rigidbody2D>();
-        jumpLimit = 2;
 	}
 	
 	
-	void Update () {
-        death();
-        if(jumpLimit> 2)
+	void Update () { //also is a function without params
+        death(); //calls death funcion to find out if player is still alive or dead,  If dead, destroy player obj. If alive, you can control player.
+        if (jumpLimit> 2) //jump limit is 2 so you can double jump
         {
             buffTime = buffTime - Time.deltaTime;
             if (buffTime < 0)
