@@ -2,14 +2,39 @@
 using System.Collections;
 
 public class PickupCherries2Conrtoller : MonoBehaviour {
+    public GameObject playerObject;
+    public PlayerController playerController;
+    public string playerTag = "Player";
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
+        playerController = playerObject.GetComponent<PlayerController>();
+    }
 	
-	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(playerTag))
+        {
+            playerController.items.Add("Cherries");
+            int buffChance = Random.Range(1, 3);
+            switch (buffChance)
+            {
+                case 1:
+                    playerController.lives = playerController.lives + 3;
+                    Destroy(gameObject);
+                    break;
+                case 2:
+                    playerController.lives = 1;
+                    Destroy(gameObject);
+                    break;
+                case 3:
+                    playerController.jumpLimit = 10;
+                    Destroy(gameObject);
+                    break;
+            }
+        }
+    }
 }
