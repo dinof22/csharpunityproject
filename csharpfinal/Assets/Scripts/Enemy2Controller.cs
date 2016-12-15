@@ -36,6 +36,7 @@ public class Enemy2Controller : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 healthCounter = healthCounter - 1;
+                gameObject.GetComponent<Animator>().SetTrigger("Enemy2Hit");
             }
         }
     }
